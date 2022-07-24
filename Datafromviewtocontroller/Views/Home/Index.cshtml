@@ -1,0 +1,60 @@
+﻿@model Datafromviewtocontroller.Models.Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h4>Pass data using Parameters</h4>
+        <section>
+            @using (Html.BeginForm("Postusingparameters", "Home"))
+            {
+                <input type="text" name="firstname" />
+                <input type="text" name="lastname" />
+                <br />
+                <input type="submit" name="Click me" />
+            }
+        </section>
+        <hr />
+        <h4>Pass data using Ruqest</h4>
+        <section>
+            @using (Html.BeginForm("Postusingruqest", "Home"))
+            {
+                <input type="text" name="firstname" />
+                <input type="text" name="lastname" />
+                <br />
+                <input type="submit" name="Click me" />
+            }
+        </section>
+        <hr />
+        <h4>Pass data form collection</h4>
+        <section>
+            @using (Html.BeginForm("PostusingFormCollection", "Home"))
+            {
+                <input type="text" name="firstname" />
+                <input type="text" name="lastname" />
+                <br />
+                <input type="submit" name="Click me" />
+            }
+        </section>
+
+        <hr />
+        <h4>Pass data form strongly binding</h4>
+        <section>
+            @using (Html.BeginForm("PostusingBinding", "Home",FormMethod.Post))
+            {
+                @Html.TextBoxFor(x => x.firstName)<br />
+                @Html.TextBoxFor(x => x.lastName)<br />
+                <input type="submit" name="Click me" />
+            }
+        </section>
+    </div>
+</body>
+</html>
