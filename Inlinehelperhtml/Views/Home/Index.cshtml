@@ -1,0 +1,40 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @helper my(String[] str)
+        {
+            <ul>
+                @foreach (var item in str)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        }
+    </div>
+
+    <div>
+        <label>
+            Example List--1
+        </label>
+        <div>
+            @my(new string[] { "A", "B", "C", "D" })
+        </div>
+    </div>
+
+    <div>
+        <label>
+            Example List--2
+        </label>
+        <div>
+            @my(new string[] { "aaa", "bbb", "ccc", "ddd" })
+        </div>
+    </div>
+</body>
+</html>
